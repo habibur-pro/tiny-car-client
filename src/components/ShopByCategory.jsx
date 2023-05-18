@@ -31,7 +31,7 @@ const ShopByCategory = () => {
                     Track</button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 mt-10">
                 {
                     cars.map((car, i) => <SingleCar
                         key={i}
