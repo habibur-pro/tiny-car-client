@@ -1,5 +1,7 @@
 import Banner from "../../components/Baner";
 import Galary from "../../components/Galary";
+import ShopByCategory from "../../components/ShopByCategory";
+
 
 
 const Home = () => {
@@ -7,6 +9,7 @@ const Home = () => {
         <>
             <Banner></Banner>
             <Galary></Galary>
+            <ShopByCategory></ShopByCategory>
         </>
     );
 };
