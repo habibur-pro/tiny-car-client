@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false)
-    console.log(isOpen)
+
     return (
         <header className=' border'>
             <div className="max-w-[1240px] mx-auto py-2 flex items-center justify-between px-5">
@@ -50,7 +50,7 @@ const Navbar = () => {
 
                 {/* nav link for mobile breakpoints */}
 
-                <ul className={`${isOpen ? 'left-0' : '-left-[-100%]'} duration-500 space-y-4 md:hidden absolute top-[80px]  py-10 h-screen bg-black w-full text-white pl-5`}>
+                <ul className={`${isOpen ? 'left-0' : '-left-[-100%]'} duration-500 ease-in-out space-y-4 md:hidden absolute top-[80px]  py-10 h-screen bg-black w-full text-white pl-5`}>
                     <li className='nav-link'>
                         <NavLink
                             to="/" className={({ isActive }) => isActive ? "text-primary" : ""}>Home</NavLink>
