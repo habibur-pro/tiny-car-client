@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "Arrma RS",
         "sub_category": "Sports",
         "price": 29.99,
@@ -12,7 +11,6 @@
         "image_url": "https://i.ibb.co/nfnNbVc/ARRMA-RC-sports.jpg"
     },
     {
-        "_id": 2,
         "name": "Buggatti Veyron",
         "sub_category": "Sports",
         "price": 39.99,
@@ -24,7 +22,6 @@
         "image_url": "https://i.ibb.co/37pzycx/Bugatti-Veyron-sports.jpg"
     },
     {
-        "_id": 3,
         "name": "Ford Mustang",
         "sub_category": "Sports",
         "price": 24.99,
@@ -36,19 +33,17 @@
         "image_url": "https://i.ibb.co/LPv85k3/Ford-Mustang-sports.jpg"
     },
     {
-        "_id": 4,
         "name": "Hot Wheels Marvel Spider",
         "sub_category": "Sports",
         "price": 9.99,
-        "seller_name": "Emily Davis",
-        "seller_email": "emilydavis@example.com",
+        "seller_name": "John Doe",
+        "seller_email": "john@gmail.com",
         "rating": 4.7,
         "quantity": 102,
         "description": "Unleash your favorite superhero's powers with the Hot Wheels Marvel Spider toy sports car. Swing into action and save the day! This toy car features a unique design inspired by the popular Marvel character, Spider-Man. It's adorned with Spider-Man graphics and colors, making it a must-have for fans of the web-slinging hero. The Hot Wheels Marvel Spider toy car is built for speed and agility, allowing it to race through imaginary cityscapes and perform daring stunts. Its sleek and aerodynamic design ensures smooth and fast movements, while the durable construction ensures it can withstand the most thrilling adventures. Whether you're recreating scenes from the Marvel universe or inventing your own superhero stories, the Hot Wheels Marvel Spider toy car is the perfect companion for young heroes-in-training. Get ready to embark on exciting missions and let your imagination soar with this action-packed toy car",
         "image_url": "https://i.ibb.co/bLzSMdm/Hot-Wheels-Marvel-Spider-sports.jpg"
     },
     {
-        "_id": 5,
         "name": "Dikei Ford",
         "sub_category": "Police",
         "price": 29.99,
@@ -60,31 +55,28 @@
         "image_url": "https://i.ibb.co/vz8DQvz/Dickie-ford-police.jpg"
     },
     {
-        "_id": 6,
         "name": "Kingsmart Police",
         "sub_category": "Police",
         "price": 24.99,
-        "seller_name": "Jane Smith",
-        "seller_email": "jane@gmail.com",
+        "seller_name": "John Doe",
+        "seller_email": "john@gmail.com",
         "rating": 4.8,
         "quantity": 50,
         "description": "Enforce the law with the Kingsmart Police toy car. This police cruiser is designed to replicate a real-life police car, complete with flashing lights and realistic siren sounds. It features a sturdy construction and smooth wheels, allowing it to navigate various terrains. The Kingsmart Police toy car also has opening doors for easy access to the interior and a removable police figure. Let your little one unleash their imagination as they embark on thrilling police chase adventures and play the role of a brave police officer.",
         "image_url": "https://i.ibb.co/1fqQXPs/KINGSMART-POLICE.jpg"
     },
     {
-        "_id": 7,
         "name": "Micro Police SUV",
         "sub_category": "Police",
         "price": 19.99,
-        "seller_name": "David Johnson",
-        "seller_email": "davidjohnson@example.com",
+        "seller_name": "John Doe",
+        "seller_email": "john@gmail.com",
         "rating": 4.2,
         "quantity": 80,
         "description": "Patrol the streets with the Micro Police SUV toy car. This police SUV is designed to tackle tough terrains and navigate through imaginary crime scenes. It features a rugged exterior, realistic detailing, and working lights and sirens for an immersive play experience. The Micro Police SUV toy car comes with a removable police figure and additional accessories, allowing kids to create exciting police adventures. With its durable construction and engaging features, it's perfect for young aspiring law enforcement officers.",
         "image_url": "https://i.ibb.co/wByshff/Micro-Police-SUV-police.jpg"
     },
     {
-        "_id": 8,
         "name": "New Ray Dodge",
         "sub_category": "Police",
         "price": 14.99,
@@ -96,19 +88,17 @@
         "image_url": "https://i.ibb.co/51Rg3ss/New-ray-dodge-police.jpg"
     },
     {
-        "_id": 9,
         "name": "Dickie Jumbo Fire",
         "sub_category": "Fire Truck",
         "price": 34.99,
-        "seller_name": "Michael Anderson",
-        "seller_email": "michaelanderson@example.com",
+        "seller_name": "John Doe",
+        "seller_email": "john@gmail.com",
         "rating": 4.6,
         "quantity": 70,
         "description": "Introducing the Dickie Jumbo Fire toy truck, a firefighting hero in a compact size. This toy fire truck is equipped with flashing lights and realistic siren sounds, providing an exciting play experience. It features a sturdy construction, movable ladder, and extendable hose for realistic firefighting action. The Dickie Jumbo Fire toy truck is perfect for imaginative play and teaching children about the importance of fire safety. Get ready to save the day with this fantastic toy fire truck!",
         "image_url": " https://i.ibb.co/4736pYq/Dickie-jumbo-fire-fire.jpg"
     },
     {
-        "_id": 10,
         "name": "Dieseney Mickey Fire",
         "sub_category": "Fire Truck",
         "price": 19.99,
@@ -120,7 +110,6 @@
         "image_url": "https://i.ibb.co/GHqLb36/Dieseney-Mickey-fire.jpg"
     },
     {
-        "_id": 11,
         "name": "Disney Cast Red Fire",
         "sub_category": "Fire Truck",
         "price": 27.99,
@@ -132,12 +121,11 @@
         "image_url": "https://i.ibb.co/2K7qCX9/Disney-cast-red-fire.jpg"
     },
     {
-        "_id": 12,
         "name": "Micro Fire Truck",
         "sub_category": "Fire Truck",
         "price": 14.99,
-        "seller_name": "Robert Johnson",
-        "seller_email": "robertjohnson@example.com",
+        "seller_name": "John Doe",
+        "seller_email": "john@gmail.com",
         "rating": 4.4,
         "quantity": 60,
         "description": "The Micro Fire Truck is a compact yet powerful firefighting vehicle that is ready to tackle any emergency. It features a detailed design with realistic fire truck elements and movable parts. With its small size, this toy fire truck is perfect for indoor and outdoor play. The Micro Fire Truck is built to withstand tough play and will provide hours of imaginative firefighting fun. Fuel your child's passion for firefighting and let them embark on exciting imaginary rescue missions with the Micro Fire Truck. Get ready to save the day and protect the neighborhood from imaginary fires with this thrilling toy fire truck!",

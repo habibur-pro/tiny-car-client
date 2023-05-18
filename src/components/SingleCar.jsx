@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SingleCar = ({ car }) => {
     const { _id, name, price, image_url, rating } = car || {}
-    console.log(car)
+
     return (
         <div className="border  rounded-t-lg relative overflow-hidden">
             <span className=" w-24 h-24 bg-slate-600 absolute -top-5 -right-5 rounded-full"></span>
