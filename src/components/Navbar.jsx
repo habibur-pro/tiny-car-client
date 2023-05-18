@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <header className=' border'>
-            <div className="max-w-[1240px] mx-auto py-2 flex items-center justify-between px-5">
+            <div className="max-w-[1240px] mx-auto py-2 flex items-center justify-between px-5 ">
                 <div className='flex items-center'>
                     {/* logo  */}
                     <img className='w-16' src={logo} alt="" />
@@ -50,7 +50,7 @@ const Navbar = () => {
 
                 {/* nav link for mobile breakpoints */}
 
-                <ul className={`${isOpen ? 'left-0' : '-left-[-100%]'} duration-500 ease-in-out space-y-4 md:hidden absolute top-[80px]  py-10 h-screen bg-black w-full text-white pl-5`}>
+                <ul className={`${isOpen ? 'left-0 block' : '-left-[-100%]'} duration-500 ease-in-out space-y-4  md:hidden absolute top-[80px]  py-10 h-screen bg-black w-full text-white pl-5 z-50`}>
                     <li className='nav-link'>
                         <NavLink
                             to="/" className={({ isActive }) => isActive ? "text-primary" : ""}>Home</NavLink>

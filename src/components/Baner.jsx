@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Banner = () => {
     return (
-        <div className='max-w-[1240px] mx-auto my-10 border rounded-lg bg-[#e2da02] p-10'>
+        <div className='max-w-[1240px] mx-auto my-10 border rounded-lg bg-[#e2da02] '>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
@@ -30,35 +30,36 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide className=''>
-                    <div className='flex items-center justify-between'>
+                    <div className='flex items-center justify-between p-5 md:p-10 md:h-[500px] h-[250px]'>
                         <div>
-                            <h3 className='text-5xl font-bold  w-3/4 leading-[70px] '>Speacial Discount On All Toys</h3>
-                            <button className='btn btn-primary mt-3'>Shop Now</button>
+                            <h3 className='md:text-5xl font-bold w-4/5  md:w-3/4 md:leading-[70px] '>Speacial Discount On All Toys</h3>
+                            <button className='btn-sm md:btn-md btn btn-primary mt-3'>Shop Now</button>
                         </div>
-                        <img src={slide_1} alt="" />
+                        <img className='w-1/2' src={slide_1} alt="" />
                     </div>
 
                 </SwiperSlide>
                 <SwiperSlide className=''>
-                    <div className='flex items-center justify-between'>
+                    <div className='flex items-center justify-between p-5 md:p-10 md:h-[500px] h-[250px]'>
                         <div>
-                            <h3 className='text-5xl font-bold  w-3/4 leading-[70px] '>Speacial Discount On All Toys</h3>
-                            <button className='btn btn-primary mt-3'>Shop Now</button>
+                            <h3 className='md:text-5xl font-bold w-4/5  md:w-3/4 md:leading-[70px] '>Speacial Discount On All Toys</h3>
+                            <button className='btn-sm md:btn-md btn btn-primary mt-3'>Shop Now</button>
                         </div>
-                        <img src={slide_1} alt="" />
+                        <img className='w-1/2' src={slide_1} alt="" />
                     </div>
 
                 </SwiperSlide>
                 <SwiperSlide className=''>
-                    <div className='flex items-center justify-between'>
+                    <div className='flex items-center justify-between p-5 md:p-10 md:h-[500px] h-[250px]'>
                         <div>
-                            <h3 className='text-5xl font-bold  w-3/4 leading-[70px] '>Speacial Discount On All Toys</h3>
-                            <button className='btn btn-primary mt-3'>Shop Now</button>
+                            <h3 className='md:text-5xl font-bold w-4/5  md:w-3/4 md:leading-[70px] '>Speacial Discount On All Toys</h3>
+                            <button className='btn-sm md:btn-md btn btn-primary mt-3'>Shop Now</button>
                         </div>
-                        <img src={slide_1} alt="" />
+                        <img className='w-1/2' src={slide_1} alt="" />
                     </div>
 
                 </SwiperSlide>
+
 
 
 
