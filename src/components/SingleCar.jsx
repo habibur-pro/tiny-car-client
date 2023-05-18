@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const SingleCar = ({ car }) => {
-    const { name, price, image_url, rating } = car || {}
+    const { _id, name, price, image_url, rating } = car || {}
     console.log(car)
     return (
         <div className="border  rounded-t-lg relative overflow-hidden">
@@ -13,7 +14,7 @@ const SingleCar = ({ car }) => {
                     <h4 className="text-primary text-md font-bold">${price}</h4>
                     <h4>Rating: {rating}</h4>
                 </div>
-                <button className="btn h-full border-x h-full">Details</button>
+                <Link to={`cars/${_id}`}> <button className="btn h-full border-x h-full">Details</button></Link>
             </div>
         </div>
 

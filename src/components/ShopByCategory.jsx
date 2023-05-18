@@ -12,6 +12,16 @@ const ShopByCategory = () => {
         }
 
     }
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/cars?category=${category}`)
+    //         .then(res => res.json())
+    //         .then(data => setCars(data))
+    //         .catch(error => console.log(error))
+    // }, [category])
+
+
+
     useEffect(() => {
         fetch('car.json')
             .then(res => res.json())
