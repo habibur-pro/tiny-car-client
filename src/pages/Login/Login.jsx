@@ -4,6 +4,7 @@ import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Register = () => {
 
@@ -89,7 +90,7 @@ const Register = () => {
                     {
                         firebaseError ? <p className="text-red-500">{firebaseError}</p> : ''
                     }
-                    <input className="btn btn-primary btn-block mt-5" type="submit" value={`${isLoading ? "Loading..." : "Login"}`}
+                    <input className="btn btn-primary btn-block mt-5" type="submit" value={`${isLoading ? "loading..." : "Login"}`}
                         disabled={isLoading}
                     />
 
@@ -97,6 +98,7 @@ const Register = () => {
                 <SocialLogin from={from}></SocialLogin>
                 <p className="mt-3 text-center">Have not  Account? <Link className="text-primary" to='/register' state={{ from: location }} replace>Create Account</Link></p>
             </div>
+
         </div>
     );
 };
