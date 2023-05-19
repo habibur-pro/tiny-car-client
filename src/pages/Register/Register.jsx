@@ -32,7 +32,7 @@ const Register = () => {
 
 
     return (
-        <div className="py-10  w-1/3  mx-auto shadow-lg border  my-20">
+        <div className="py-10  md:w-1/3  mx-auto shadow-lg border  my-20">
             <h3 className="font-bold text-3xl ml-10">Create Account</h3>
             <div className="p-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
