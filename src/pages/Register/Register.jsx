@@ -61,7 +61,17 @@ const Register = () => {
                     {/* pass word  */}
                     <div className="relative border outline-none focus:outline-none focus:border-0 mb-5">
                         <input
-                            {...register("password", { required: "password is required" })}
+                            {...register("password", {
+                                required: "password is required", minLength: {
+                                    value: 4,
+                                    message: 'password min length 6 character and max 16'
+                                },
+                                maxLength: {
+                                    value: 16,
+                                    message: 'max password length limit 16 character'
+                                }
+
+                            })}
                             type={isShow ? "text" : "password"}
 
                             placeholder="Password"
@@ -83,7 +93,9 @@ const Register = () => {
                     {
                         firebaseError ? <p className="text-red-500">{firebaseError}</p> : ''
                     }
-                    <input className="btn btn-primary btn-block mt-5" type="submit" value={`${isLoading ? "Loading.." : "Register"}`} />
+                    <input className="btn btn-primary btn-block mt-5" type="submit" value={`${isLoading ? "Loading.." : "Register"}`}
+                        disabled={isLoading}
+                    />
 
                 </form>
                 <SocialLogin></SocialLogin>

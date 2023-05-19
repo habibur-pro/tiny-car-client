@@ -1,15 +1,34 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
-const Login = () => {
+const Register = () => {
+
     const [isShow, setShow] = useState(false)
+    const [isLoading, setLoading] = useState(false)
+    const [firebaseError, setFirebaseError] = useState("")
+    const { loginUserWithEmailAndPassword } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    console.log(errors)
-    const onSubmit = data => console.log(data);
+
+
+
+    const onSubmit = data => {
+        setLoading(true)
+        loginUserWithEmailAndPassword(data.email, data.password)
+            .then(result => {
+                console.log(result.user)
+                setFirebaseError("")
+                setLoading(false)
+            })
+            .catch(error => {
+                setFirebaseError(error?.code)
+                setLoading(false)
+            })
+    };
 
 
     return (
@@ -17,7 +36,6 @@ const Login = () => {
             <h3 className="font-bold text-3xl ml-10">Please Login</h3>
             <div className="p-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
-
 
 
                     {/* email  */}
@@ -34,7 +52,17 @@ const Login = () => {
                     {/* pass word  */}
                     <div className="relative border outline-none focus:outline-none focus:border-0 mb-5">
                         <input
-                            {...register("password", { required: "password is required" })}
+                            {...register("password", {
+                                required: "password is required", minLength: {
+                                    value: 4,
+                                    message: 'password min length 6 character and max 16'
+                                },
+                                maxLength: {
+                                    value: 16,
+                                    message: 'max password length limit 16 character'
+                                }
+
+                            })}
                             type={isShow ? "text" : "password"}
 
                             placeholder="Password"
@@ -53,14 +81,19 @@ const Login = () => {
                         </span>
                     </div>
                     <p className="text-red-500">{errors?.email ? errors?.email?.message : errors?.password ? errors?.password?.message : ''}</p>
-                    <input className="btn btn-primary btn-block mt-5" type="submit" value='login' />
+                    {
+                        firebaseError ? <p className="text-red-500">{firebaseError}</p> : ''
+                    }
+                    <input className="btn btn-primary btn-block mt-5" type="submit" value={`${isLoading ? "Loading..." : "Login"}`}
+                        disabled={isLoading}
+                    />
 
                 </form>
                 <SocialLogin></SocialLogin>
-                <p className="mt-3 text-center">Have not any Account? <Link className="text-primary" to='/register'>Create Account</Link></p>
+                <p className="mt-3 text-center">Have not  Account? <Link className="text-primary" to='/register'>Create Account</Link></p>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;
