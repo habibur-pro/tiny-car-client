@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
+
     const [isShow, setShow] = useState(false)
+    const { registerUserWithEmailAndPassword } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    console.log(errors)
-    const onSubmit = data => console.log(data);
+
+
+
+    const onSubmit = data => {
+        registerUserWithEmailAndPassword(data.email, data.password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => console.log(error))
+    };
 
 
     return (
@@ -62,9 +73,10 @@ const Register = () => {
                     </div>
                     <p className="text-red-500">{errors.name ? errors?.name?.message : errors?.email ? errors?.email?.message : errors?.password ? errors?.password?.message : ''}</p>
                     <input className="btn btn-primary btn-block mt-5" type="submit" value='login' />
-                    <SocialLogin></SocialLogin>
-                    <p className="mt-3 text-center">Have an Account? <Link className="text-primary" to='/login'>Login</Link></p>
+
                 </form>
+                <SocialLogin></SocialLogin>
+                <p className="mt-3 text-center">Have an Account? <Link className="text-primary" to='/login'>Login</Link></p>
             </div>
         </div>
     );

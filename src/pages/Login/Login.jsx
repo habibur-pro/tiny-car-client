@@ -54,9 +54,10 @@ const Login = () => {
                     </div>
                     <p className="text-red-500">{errors?.email ? errors?.email?.message : errors?.password ? errors?.password?.message : ''}</p>
                     <input className="btn btn-primary btn-block mt-5" type="submit" value='login' />
-                    <SocialLogin></SocialLogin>
-                    <p className="mt-3 text-center">Have not any Account? <Link className="text-primary" to='/register'>Create Account</Link></p>
+
                 </form>
+                <SocialLogin></SocialLogin>
+                <p className="mt-3 text-center">Have not any Account? <Link className="text-primary" to='/register'>Create Account</Link></p>
             </div>
         </div>
     );

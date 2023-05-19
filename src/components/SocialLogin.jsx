@@ -1,8 +1,18 @@
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SocialLogin = () => {
+    const { loginWithGoogle } = useContext(AuthContext)
+
+    const handleGoogleLogin = () => {
+        loginWithGoogle()
+            .then(result => {
+                console.log('user from social login', result.user)
+            })
+    }
     return (
-        <button className="btn  btn-block mt-10" type="submit">
+        <button onClick={handleGoogleLogin} className="btn  btn-block mt-10" type="submit">
             <span className="text-2xl mr-3"><FcGoogle /></span> Login With Google
         </button>
     );

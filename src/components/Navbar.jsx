@@ -1,10 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png'
 import { Fade as Hamburger } from 'hamburger-react'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false)
+    const { user } = useContext(AuthContext)
+
+    console.log('user from nav', user)
 
     return (
         <header className=' border'>
