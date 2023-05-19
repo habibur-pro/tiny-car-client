@@ -8,11 +8,11 @@ const ProductDetails = () => {
 
 
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/cars/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => setCar(data))
-    // }, [])
+    useEffect(() => {
+        fetch(`https://tiny-car-server.vercel.app/toys/${id}`)
+            .then(res => res.json())
+            .then(data => setCar(data))
+    }, [])
     return (
         <div className="border  rounded-t-lg relative overflow-hidden">
             <span className=" w-24 h-24 bg-slate-600 absolute -top-5 -right-5 rounded-full"></span>

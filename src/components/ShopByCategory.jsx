@@ -14,7 +14,7 @@ const ShopByCategory = () => {
     }
 
     useEffect(() => {
-        fetch(`https://tiny-car-server.vercel.app/toys/${category}`)
+        fetch(`https://tiny-car-server.vercel.app/allToys/${category}`)
             .then(res => res.json())
             .then(data => setCars(data))
             .catch(error => console.log(error))

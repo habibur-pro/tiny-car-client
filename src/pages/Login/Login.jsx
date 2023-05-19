@@ -4,6 +4,7 @@ import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 
 const Register = () => {
@@ -25,10 +26,11 @@ const Register = () => {
         setLoading(true)
         loginUserWithEmailAndPassword(data.email, data.password)
             .then(result => {
-                console.log(result.user)
+
                 setFirebaseError("")
                 setLoading(false)
-                navigate(from, { replace: true })
+
+                // navigate(from, { replace: true })
             })
             .catch(error => {
                 setFirebaseError(error?.code)
