@@ -4,7 +4,7 @@ import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import ClipLoader from "react-spinners/ClipLoader";
+
 
 const Register = () => {
 

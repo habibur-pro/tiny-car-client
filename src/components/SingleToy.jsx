@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const SingleCar = ({ car }) => {
+const SingleToy = ({ car }) => {
     const { _id, name, price, image_url, rating } = car || {}
 
     return (
@@ -14,7 +14,7 @@ const SingleCar = ({ car }) => {
                     <h4 className="text-primary text-md font-bold">${price}</h4>
                     <h4>Rating: {rating}</h4>
                 </div>
-                <Link to={`cars/${_id}`}> <button className="btn h-full border-x h-full">Details</button></Link>
+                <Link to={`/toys/${_id}`}> <button className="btn h-full border-x h-full">Details</button></Link>
             </div>
         </div>
 
@@ -36,4 +36,4 @@ const SingleCar = ({ car }) => {
     );
 };
 
-export default SingleCar;
+export default SingleToy;

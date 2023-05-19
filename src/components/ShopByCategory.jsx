@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SingleCar from "./SingleCar";
+import SingleToy from "./SingleToy";
 
 
 const ShopByCategory = () => {
@@ -70,10 +70,10 @@ const ShopByCategory = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 mt-10">
                 {
-                    cars.map((car) => <SingleCar
+                    cars.map((car) => <SingleToy
                         key={car._id}
                         car={car}
-                    ></SingleCar>)
+                    ></SingleToy>)
                 }
             </div>
 
