@@ -30,7 +30,7 @@ const Register = () => {
                 setFirebaseError("")
                 setLoading(false)
 
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setFirebaseError(error?.code)

@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../utils/firebase.config";
 import Spinner from "../components/Spinner";
-import { HashLoader } from "react-spinners";
+
 export const AuthContext = createContext(null)
 
 
@@ -38,6 +38,15 @@ const AuthProvider = ({ children }) => {
     }
 
 
+    const userInfo = {
+        user,
+        registerUserWithEmailAndPassword,
+        loginUserWithEmailAndPassword,
+        loginWithGoogle,
+        logOut
+    }
+
+
     // chck user authStatus 
     useEffect(() => {
         setLoading(true)
@@ -49,19 +58,13 @@ const AuthProvider = ({ children }) => {
         return () => unSubscribe()
     }, [])
 
-
-
-    const userInfo = {
-        user,
-        registerUserWithEmailAndPassword,
-        loginUserWithEmailAndPassword,
-        loginWithGoogle,
-        logOut
-    }
-
     if (isLoading) {
         return <Spinner></Spinner>
     }
+
+
+
+
     return (
         <AuthContext.Provider value={userInfo}>
             {children}
