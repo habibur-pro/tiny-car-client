@@ -94,7 +94,7 @@ const Register = () => {
                     />
 
                 </form>
-                <SocialLogin></SocialLogin>
+                <SocialLogin from={from}></SocialLogin>
                 <p className="mt-3 text-center">Have not  Account? <Link className="text-primary" to='/register' state={{ from: location }} replace>Create Account</Link></p>
             </div>
         </div>

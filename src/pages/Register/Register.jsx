@@ -104,7 +104,7 @@ const Register = () => {
                     />
 
                 </form>
-                <SocialLogin></SocialLogin>
+                <SocialLogin from={from}></SocialLogin>
                 <p className="mt-3 text-center">Have an Account? <Link className="text-primary" to='/login'>Login</Link></p>
             </div>
         </div>

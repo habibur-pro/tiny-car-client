@@ -64,7 +64,7 @@ const ShopByCategory = () => {
                     Sports Car</button>
                 <button value="police" className={`${category === 'police' && 'btn-primary'}  border border-white   px-5 py-2 rounded`}>
                     Police Car</button>
-                <button value="fire truck" className={`${category === 'truck' && 'btn-primary'}  border border-white   px-5 py-2 rounded`}>
+                <button value="fire truck" className={`${category === 'fire truck' && 'btn-primary'}  border border-white   px-5 py-2 rounded`}>
                     Fire Track</button>
             </div>
 
