@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
@@ -12,6 +12,10 @@ const Register = () => {
     const [firebaseError, setFirebaseError] = useState("")
     const { loginUserWithEmailAndPassword } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/'
 
 
 
@@ -23,6 +27,7 @@ const Register = () => {
                 console.log(result.user)
                 setFirebaseError("")
                 setLoading(false)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setFirebaseError(error?.code)
@@ -90,7 +95,7 @@ const Register = () => {
 
                 </form>
                 <SocialLogin></SocialLogin>
-                <p className="mt-3 text-center">Have not  Account? <Link className="text-primary" to='/register'>Create Account</Link></p>
+                <p className="mt-3 text-center">Have not  Account? <Link className="text-primary" to='/register' state={{ from: location }} replace>Create Account</Link></p>
             </div>
         </div>
     );

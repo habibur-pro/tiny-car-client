@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
@@ -13,6 +13,11 @@ const Register = () => {
     const { registerUserWithEmailAndPassword } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    console.log('register', location)
+    const from = location?.state?.from?.state?.from?.pathname || '/'
 
 
 
@@ -23,6 +28,7 @@ const Register = () => {
                 console.log(result.user)
                 setFirebaseError("")
                 setLoading(false)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setFirebaseError(error?.code)

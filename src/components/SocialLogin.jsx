@@ -1,15 +1,22 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
     const { loginWithGoogle } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/'
+
 
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(result => {
                 console.log('user from social login', result.user)
+                navigate(from, { replace: true })
             })
+            .catch(error => console.log(error))
     }
     return (
         <button onClick={handleGoogleLogin} className="btn  btn-block mt-10" type="submit">

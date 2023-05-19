@@ -34,14 +34,12 @@ const Navbar = () => {
                         <NavLink
                             to="/" className={({ isActive }) => isActive ? "text-primary" : ""}>Home</NavLink>
                     </li>
+
                     <li className='nav-link'>
                         <NavLink
-                            to="/login" className={({ isActive }) => isActive ? "text-primary" : ""}>Login</NavLink>
+                            to="/allToys" className={({ isActive }) => isActive ? "text-primary" : ""}>All Toys</NavLink>
                     </li>
-                    <li className='nav-link'>
-                        <NavLink
-                            to="/register" className={({ isActive }) => isActive ? "text-primary" : ""}>Register</NavLink>
-                    </li>
+
 
                     {/* conditional show add a toy and my toy by user login  */}
 
@@ -104,13 +102,10 @@ const Navbar = () => {
                         <NavLink
                             to="/" className={({ isActive }) => isActive ? "text-primary" : ""}>Home</NavLink>
                     </li>
+
                     <li className='nav-link'>
                         <NavLink
-                            to="/login" className={({ isActive }) => isActive ? "text-primary" : ""}>Login</NavLink>
-                    </li>
-                    <li className='nav-link'>
-                        <NavLink
-                            to="/register" className={({ isActive }) => isActive ? "text-primary" : ""}>Register</NavLink>
+                            to="/allToys" className={({ isActive }) => isActive ? "text-primary" : ""}>All Toys</NavLink>
                     </li>
 
                     {/* conditional show add a toy and my toys by user login on mobile */}
