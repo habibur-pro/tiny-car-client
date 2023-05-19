@@ -8,6 +8,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Register = () => {
 
     const [isShow, setShow] = useState(false)
+    const [isLoading, setLoading] = useState(false)
+    const [firebaseError, setFirebaseError] = useState("")
     const { registerUserWithEmailAndPassword } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -15,11 +17,17 @@ const Register = () => {
 
 
     const onSubmit = data => {
+        setLoading(true)
         registerUserWithEmailAndPassword(data.email, data.password)
             .then(result => {
                 console.log(result.user)
+                setFirebaseError("")
+                setLoading(false)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setFirebaseError(error?.code)
+                setLoading(false)
+            })
     };
 
 
@@ -72,7 +80,10 @@ const Register = () => {
                         </span>
                     </div>
                     <p className="text-red-500">{errors.name ? errors?.name?.message : errors?.email ? errors?.email?.message : errors?.password ? errors?.password?.message : ''}</p>
-                    <input className="btn btn-primary btn-block mt-5" type="submit" value='login' />
+                    {
+                        firebaseError ? <p className="text-red-500">{firebaseError}</p> : ''
+                    }
+                    <input className="btn btn-primary btn-block mt-5" type="submit" value={`${isLoading ? "Loading.." : "Register"}`} />
 
                 </form>
                 <SocialLogin></SocialLogin>
