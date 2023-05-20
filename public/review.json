@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "image": "john-doe.jpg",
+        "rating": 4.5,
+        "comment": "Great selection of car toys! My kids love them."
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "image": "jane-smith.jpg",
+        "rating": 5,
+        "comment": "Excellent store with a wide variety of car toys. Highly recommended!"
+    },
+    {
+        "id": 3,
+        "name": "Mike Johnson",
+        "image": "mike-johnson.jpg",
+        "rating": 3.8,
+        "comment": "Decent collection of car toys, but prices could be more competitive."
+    },
+    {
+        "id": 4,
+        "name": "Emily Davis",
+        "image": "emily-davis.jpg",
+        "rating": 4.2,
+        "comment": "Friendly staff and good customer service. My son had a great time shopping here."
+    },
+    {
+        "id": 5,
+        "name": "Daniel Wilson",
+        "image": "daniel-wilson.jpg",
+        "rating": 4.7,
+        "comment": "High-quality car toys and reasonable prices. Will definitely visit again!"
+    },
+    {
+        "id": 6,
+        "name": "Sophia Adams",
+        "image": "sophia-adams.jpg",
+        "rating": 3.5,
+        "comment": "Average toy store. Not much variety in car toys."
+    }
+]

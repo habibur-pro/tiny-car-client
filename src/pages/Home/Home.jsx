@@ -1,5 +1,6 @@
 import Banner from "../../components/Baner";
 import Galary from "../../components/Galary";
+import Reviews from "../../components/Reviews";
 import ShopByCategory from "../../components/ShopByCategory";
 
 
@@ -10,6 +11,8 @@ const Home = () => {
             <Banner></Banner>
             <Galary></Galary>
             <ShopByCategory></ShopByCategory>
+            <Reviews></Reviews>
+
         </>
     );
 };
