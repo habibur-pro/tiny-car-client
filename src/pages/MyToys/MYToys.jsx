@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToysTableRow from "../../components/MyToysTableRow";
 import { Link } from "react-router-dom";
-import DeleteModal from "../../components/DeleteModal";
 
 
 const MYToys = () => {
@@ -45,11 +44,12 @@ const MYToys = () => {
                     }
                 </tbody>
 
+
             </table>
             {
                 toys?.length < 1 && <p className="text-center text-lg mt-5">You Have not added any Toys Please <Link className="text-primary underline" to='/add_toy'> Add Your Toys</Link></p>
             }
-            <DeleteModal></DeleteModal>
+
         </div>
     );
 };

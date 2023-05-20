@@ -1,9 +1,11 @@
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from 'sweetalert2'
-import DeleteModal from "./DeleteModal";
+import UpdateModal from "./UpdateModal";
+
 
 const MyToysTableRow = ({ toy, toys, setToys }) => {
+
     const { _id, rating, name: toyName, sub_category, price, seller_name, seller_email, quantity, image_url } = toy || {}
 
 
@@ -40,7 +42,6 @@ const MyToysTableRow = ({ toy, toys, setToys }) => {
         })
     }
 
-
     return (
         <>
             <tr>
@@ -59,11 +60,17 @@ const MyToysTableRow = ({ toy, toys, setToys }) => {
                         <label htmlFor="delete-modal" className="">
                             <FaRegEdit />
                         </label>
+
+                        <UpdateModal toy={toy}></UpdateModal>
+
+
+
                     </button>
 
 
 
                     <button title="Delete" onClick={handleDelete} className=""><RiDeleteBin6Line /></button>
+
                     {/* <label htmlFor="delete-modal" className="btn">open modal</label> */}
                 </td>
             </tr>
