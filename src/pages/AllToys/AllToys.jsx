@@ -6,7 +6,7 @@ const AllToys = () => {
     const [toys, setToys] = useState([])
 
     useEffect(() => {
-        fetch('https://tiny-car-server.vercel.app/toys')
+        fetch('https://tiny-car-server.vercel.app/toys?limit=20')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
