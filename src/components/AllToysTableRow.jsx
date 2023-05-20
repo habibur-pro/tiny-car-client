@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AllToysTableRow = ({ toy }) => {
     const { _id, name: toyName, sub_category, price, seller_name, quantity, image_url } = toy || {}
     return (
-        <tr>
+        <tr className="bg-transparent">
             <td>
                 <img className="w-12 h-12 bg-base-200 rounded-lg" src={image_url} alt="" />
             </td>

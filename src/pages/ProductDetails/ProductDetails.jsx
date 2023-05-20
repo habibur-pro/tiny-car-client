@@ -11,7 +11,7 @@ const ProductDetails = () => {
             .then(res => res.json())
             .then(data => setToy(data))
     }, [])
-    const { _id, rating, name: toyName, sub_category, price, seller_name, quantity, description, image_url } = toy || {}
+    const { _id, rating, name: toyName, sub_category, price, seller_name, seller_email, quantity, description, image_url } = toy || {}
 
 
 
@@ -40,7 +40,8 @@ const ProductDetails = () => {
                         />
                         <p className=" py-1"> <span className="">{quantity}
                             /pcs Available</span></p>
-                        <p className="text-xl">{seller_name}</p>
+                        <p className="text-2xl mt-3">{seller_name}</p>
+                        <p className="text-md">{seller_email}</p>
 
 
 
