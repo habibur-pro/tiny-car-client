@@ -3,6 +3,10 @@ import { FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import gradient from '../assets/gradint-image.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const TopRated = () => {
     const [toys, setToys] = useState([])
@@ -19,7 +23,7 @@ const TopRated = () => {
                 <h1 className="text-center font-bold text-4xl mb-10">Trending Toys</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
                     {
-                        toys.map(toy => <div className="shadow-xl "
+                        toys.map(toy => <div data-aos='fade-up' data-aos-duration='800' className="shadow-xl "
                             key={toy._id}
                         >
                             <div className="relative border">
@@ -35,7 +39,7 @@ const TopRated = () => {
                                         fullSymbol={<FaStar className="icon text-secondary" />}
                                     />
                                 </div>
-                                <Link to={`/toys/${toy._id}`}> <button className="btn w-full btn-secondary rounded-none">View Details</button></Link>
+                                <Link to={`/toys/${toy._id}`}> <button className="btn w-full btn-primary     rounded-none">View Details</button></Link>
                             </div>
                         </div>)
                     }

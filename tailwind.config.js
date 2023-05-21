@@ -8,14 +8,14 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'my-gradient': "url(./src/assets/gradint-image.jpg)",
+
 
       }
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["bumblebee"],
+    themes: ["light"],
   },
 }
 

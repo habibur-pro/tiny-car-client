@@ -1,17 +1,31 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const AddToy = () => {
+const UpdateToy = () => {
     const { user } = useContext(AuthContext)
-
     const { register, handleSubmit, reset } = useForm();
+    const { id } = useParams()
+    const [toy, setToy] = useState({})
+
+    const { _id, name: toyName, sub_category, price, seller_name, quantity, image_url } = toy || {}
+
+    useEffect(() => {
+        fetch(`https://tiny-car-server.vercel.app/toys/${id}`)
+            .then(res => res.json())
+            .then(data => setToy(data))
+    }, [])
+
+
 
     const onSubmit = inputData => {
 
 
-        fetch('https://tiny-car-server.vercel.app/addToy', {
-            method: 'POST',
+
+        fetch(`https://tiny-car-server.vercel.app/update/${id}`, {
+            method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
             },
@@ -19,8 +33,15 @@ const AddToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                reset()
+                if (data.modifiedCount > 0 || data.upsertedCount > 0) {
+                    Swal.fire(
+                        'Updated!',
+                        'Your Toys has been Updated.',
+                        'success'
+                    )
+                    reset()
+
+                }
             })
             .catch(err => console.log(err))
     };
@@ -30,7 +51,7 @@ const AddToy = () => {
     return (
         <div className="bg-my-gradient bg-cover bg-center bg-no-repeat">
             <div className=" max-w-[1240px] mx-auto px-5 my-20 md:p-10 bg-white bg-opacity-60 md:px-20  shadow-xl border">
-                <h1 className="text-center font-bold mb-8 text-3xl">Add A Toy</h1>
+                <h1 className="text-center font-bold mb-8 text-3xl">Update Toy</h1>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
@@ -38,6 +59,7 @@ const AddToy = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                         {/* toy name  */}
                         <input
+                            value={toyName}
                             type="text"
                             placeholder="Toy Name"
                             className=" px-3 py-2 focus:outline-primary w-full border rounded-sm"
@@ -46,6 +68,7 @@ const AddToy = () => {
 
                         {/* toy image  */}
                         <input
+                            value={image_url}
                             type="text"
                             placeholder="Toy Photo URL"
                             className=" px-3 py-2 focus:outline-primary w-full border rounded-sm"
@@ -58,6 +81,8 @@ const AddToy = () => {
                         {/* toy sub category  */}
 
                         <select
+                            value={sub_category}
+                            disabled={sub_category}
                             className=" px-3 py-2 focus:outline-primary w-full border rounded-sm"
                             {...register("sub_category", { required: true })}
                         >
@@ -101,19 +126,21 @@ const AddToy = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                         <input
+                            value={user?.displayName || seller_name}
                             type="text"
                             placeholder="Seller Name"
                             className=" px-3 py-2 focus:outline-primary w-full border rounded-sm"
                             {...register("seller_name", { required: true })}
-                            value={user?.displayName}
+
                         />
 
                         <input
+                            value={user?.email}
                             type="email"
                             placeholder="Seller Email"
                             className=" px-3 py-2 focus:outline-primary w-full border rounded-sm"
                             {...register("seller_email", { required: true })}
-                            value={user?.email}
+
                         />
                     </div>
                     <textarea rows="5"
@@ -125,7 +152,7 @@ const AddToy = () => {
                         <input
                             type="submit"
                             className="btn btn-secondary "
-                            value="Add Toys"
+                            value="Update Toy"
                         ></input>
                     </div>
                 </form>
@@ -134,4 +161,4 @@ const AddToy = () => {
     );
 };
 
-export default AddToy;
+export default UpdateToy;

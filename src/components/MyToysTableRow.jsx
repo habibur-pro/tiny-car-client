@@ -2,6 +2,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from 'sweetalert2'
 import UpdateModal from "./UpdateModal";
+import { Link } from "react-router-dom";
 
 
 const MyToysTableRow = ({ toy, toys, setToys }) => {
@@ -56,16 +57,9 @@ const MyToysTableRow = ({ toy, toys, setToys }) => {
                 <td>{quantity}</td>
                 <td className="font-bold text-green-500">${price}</td>
                 <td className="space-x-5">
-                    <button title="Update" className="cursor-pointer">
-                        <label htmlFor="delete-modal" className="">
-                            <FaRegEdit />
-                        </label>
-
-                        <UpdateModal toy={toy}></UpdateModal>
-
-
-
-                    </button>
+                    <Link to={`/toy/update/${_id}`}> <button title="Update" className="cursor-pointer">
+                        <FaRegEdit />
+                    </button></Link>
 
 
 

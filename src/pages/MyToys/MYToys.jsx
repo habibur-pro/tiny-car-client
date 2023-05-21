@@ -9,7 +9,7 @@ const MYToys = () => {
     const [toys, setToys] = useState([])
 
     useEffect(() => {
-        fetch(`https://tiny-car-server.vercel.app/myToys/${user?.email}?limit=20`)
+        fetch(`https://tiny-car-server.vercel.app/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
 
