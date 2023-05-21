@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'toy/update/:id',
-                element: <UpdateToy></UpdateToy>
+                element: <PrivetRoute><UpdateToy></UpdateToy></PrivetRoute>
             }
         ]
     }

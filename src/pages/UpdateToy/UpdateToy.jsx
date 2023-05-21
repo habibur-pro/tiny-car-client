@@ -9,15 +9,7 @@ const UpdateToy = () => {
     const { id } = useParams()
     const [toy, setToy] = useState({})
 
-    const { register, handleSubmit, reset } = useForm({
-        // values: {
-        //     seller_email: user?.email || toy?.seller_email,
-        //     seller_name: user?.displayName || toy?.seller_name,
-        //     sub_category: toy?.sub_category,
-        //     name: toy?.name,
-        //     image_url: toy?.image_url
-        // }
-    });
+    const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
         fetch(`https://tiny-car-server.vercel.app/toys/${id}`)
@@ -60,7 +52,7 @@ const UpdateToy = () => {
     return (
         <div className="bg-my-gradient bg-cover bg-center bg-no-repeat">
             <div className=" max-w-[1240px] mx-auto px-5 my-20 md:p-10 bg-white bg-opacity-60 md:px-20  shadow-xl border">
-                <h1 className="text-center font-bold mb-8 text-3xl">Add A Toy</h1>
+                <h1 className="text-center font-bold mb-8 text-3xl">Update Toy</h1>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
@@ -154,7 +146,7 @@ const UpdateToy = () => {
                         <input
                             type="submit"
                             className="btn btn-secondary "
-                            value="Add Toys"
+                            value="Update Toys"
                         ></input>
                     </div>
                 </form>
