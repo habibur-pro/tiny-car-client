@@ -12,7 +12,7 @@ const MYToys = () => {
     const [filter, setFilter] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}?filter=${filter}`)
+        fetch(`https://tiny-car-server.vercel.app/myToys/${user?.email}?filter=${filter}`)
             .then(res => res.json())
             .then(data => setToys(data))
 
