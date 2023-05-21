@@ -9,25 +9,27 @@ const MYToys = () => {
     useTitle('My Toys')
     const { user } = useContext(AuthContext)
     const [toys, setToys] = useState([])
+    const [filter, setFilter] = useState('')
 
     useEffect(() => {
-        fetch(`https://tiny-car-server.vercel.app/myToys/${user?.email}`)
+        fetch(`http://localhost:5000/myToys/${user?.email}?filter=${filter}`)
             .then(res => res.json())
             .then(data => setToys(data))
 
-    }, [])
+    }, [filter])
 
     const handleFilter = (event) => {
 
         const filterValue = event.target.value;
-        console.log(filterValue)
+        setFilter(filterValue)
+        console.log(filter)
     }
 
     return (
         <div className="bg-my-gradient bg-cover bg-no-repeat bg-center">
             <div className="max-w-[1240px] mx-auto px-5 py-16 ">
                 <select onChange={handleFilter} className="select select-bordered w-full max-w-xs mb-5">
-                    <option disabled selected>Filter by Price</option>
+                    <option disabled >Filter by Price</option>
                     <option value='ascending'>Price Acceding</option>
                     <option value='descending'>Price Descending</option>
                 </select>
