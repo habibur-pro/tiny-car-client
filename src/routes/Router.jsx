@@ -10,16 +10,19 @@ import MYToys from "../pages/MyToys/MYToys";
 import AddToy from "../pages/AddToy/AddToy";
 import AllToys from "../pages/AllToys/AllToys";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>
             },
+
             {
                 path: 'login',
                 element: <Login></Login>
