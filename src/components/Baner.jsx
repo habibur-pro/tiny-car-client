@@ -11,7 +11,9 @@ import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper";
 
+
 const Banner = () => {
+
     return (
         <div className='max-w-[1240px] mx-auto my-10 border rounded-lg bg-[#e2da02] '>
             <Swiper
