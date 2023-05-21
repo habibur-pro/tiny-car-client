@@ -10,7 +10,11 @@ const AddToy = () => {
 
     const { register, handleSubmit, reset } = useForm();
 
-    const onSubmit = inputData => {
+    const onSubmit = (inputData) => {
+
+        inputData.price = parseFloat(inputData?.price)
+        inputData.quantity = parseFloat(inputData?.quantity)
+        inputData.rating = parseFloat(inputData?.rating)
 
 
         fetch('https://tiny-car-server.vercel.app/addToy', {
@@ -24,8 +28,8 @@ const AddToy = () => {
             .then(data => {
                 if (data.insertedId) {
                     Swal.fire(
-                        'Updated!',
-                        'Your Toys has been Updated.',
+                        'Added!',
+                        'Your Toys has been Added.',
                         'success'
                     )
                     console.log(data)

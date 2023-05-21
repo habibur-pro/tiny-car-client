@@ -25,7 +25,10 @@ const UpdateToy = () => {
 
     const onSubmit = inputData => {
 
-        console.log(inputData)
+        inputData.price = parseFloat(inputData?.price)
+        inputData.quantity = parseFloat(inputData?.quantity)
+        inputData.rating = parseFloat(inputData?.rating)
+
 
         fetch(`https://tiny-car-server.vercel.app/update/${id}`, {
             method: 'PUT',
