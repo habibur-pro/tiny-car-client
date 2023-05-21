@@ -21,9 +21,9 @@ const Navbar = () => {
     console.log('user from nav', user)
 
     return (
-        <header className=' border z-50'>
+        <header className=' border  z-50'>
             <div className="max-w-[1240px] mx-auto py-2 flex items-center justify-between px-5 z-20">
-                <div className='flex items-center'>
+                <div className='flex items-center '>
                     {/* logo  */}
                     <Link to='/'><img className='w-16' src={logo} alt="" /></Link>
                     <h3 className='text-xl font-bold'>Tiny<span className='text-red-500'>Car</span></h3>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 **********
                 ************/}
 
-                <ul className={`${isOpen ? 'top-[80px] block' : 'top-[-100%] left0'} left-0 duration-500 ease-in-out space-y-4  md:hidden absolute   py-10  bg-black w-full text-white pl-5 z-10`}>
+                <ul className={`${isOpen ? 'top-[80px] block' : 'top-[-100%] left0'} left-0 duration-500 ease-in-out space-y-4  md:hidden absolute   py-10  bg-black w-full text-white pl-5 z-50`}>
                     <li className='nav-link'>
                         <NavLink
                             to="/" className={({ isActive }) => isActive ? "text-primary" : ""}>Home</NavLink>
