@@ -2,26 +2,6 @@ import { Link } from "react-router-dom";
 
 
 
-// fetch(`https://tiny-car-server.vercel.app/update/${id}`, {
-//     method: 'PUT',
-//     headers: {
-//         'Content-type': 'application/json'
-//     },
-//     body: JSON.stringify(inputData)
-// })
-//     .then(res => res.json())
-//     .then(data => {
-//         if (data.modifiedCount > 0 || data.upsertedCount > 0) {
-//             Swal.fire(
-//                 'Updated!',
-//                 'Your Toys has been Updated.',
-//                 'success'
-//             )
-//             reset()
-
-//         }
-//     })
-//     .catch(err => console.log(err))
 
 
 
