@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Rating from 'react-rating';
 import { FaStar } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const ProductDetails = () => {
+    useTitle("Toy Details")
     const [toy, setToy] = useState([])
     const { id } = useParams()
     useEffect(() => {
@@ -11,7 +13,7 @@ const ProductDetails = () => {
             .then(res => res.json())
             .then(data => setToy(data))
     }, [])
-    const { _id, rating, name: toyName, sub_category, price, seller_name, seller_email, quantity, description, image_url } = toy || {}
+    const { rating, name: toyName, sub_category, price, seller_name, seller_email, quantity, description, image_url } = toy || {}
 
 
 

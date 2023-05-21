@@ -4,11 +4,13 @@ import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import SocialLogin from "../../components/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
+import Swal from "sweetalert2";
+
 
 
 const Register = () => {
-
+    useTitle('Login')
     const [isShow, setShow] = useState(false)
     const [isLoading, setLoading] = useState(false)
     const [firebaseError, setFirebaseError] = useState("")
@@ -26,7 +28,11 @@ const Register = () => {
         setLoading(true)
         loginUserWithEmailAndPassword(data.email, data.password)
             .then(result => {
-
+                Swal.fire(
+                    'Success!',
+                    'Login Successful',
+                    'success'
+                )
                 setFirebaseError("")
                 setLoading(false)
 

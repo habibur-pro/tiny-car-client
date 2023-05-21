@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToysTableRow from "../../components/MyToysTableRow";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 const MYToys = () => {
+    useTitle('My Toys')
     const { user } = useContext(AuthContext)
     const [toys, setToys] = useState([])
 

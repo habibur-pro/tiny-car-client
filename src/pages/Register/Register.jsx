@@ -5,8 +5,11 @@ import SocialLogin from "../../components/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
+import Swal from "sweetalert2";
 
 const Register = () => {
+    useTitle('Register')
 
     const [isShow, setShow] = useState(false)
     const [isLoading, setLoading] = useState(false)
@@ -26,7 +29,11 @@ const Register = () => {
         setLoading(true)
         registerUserWithEmailAndPassword(data.email, data.password)
             .then(result => {
-                toast.success('Regstration successful')
+                Swal.fire(
+                    'Success!',
+                    'Register Successfully',
+                    'success'
+                )
                 setFirebaseError("")
                 setLoading(false)
                 navigate(from, { replace: true })
