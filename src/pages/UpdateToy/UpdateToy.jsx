@@ -95,6 +95,7 @@ const UpdateToy = () => {
                             <option value="sports">Sports Car</option>
                             <option value="police">Police Car</option>
                             <option value="fire truck">Fire Truck</option>
+                            <option value="treanding">Treandin</option>
                         </select>
 
                         <input
@@ -150,8 +151,8 @@ const UpdateToy = () => {
                     <div className="text-center mt-5">
                         <input
                             type="submit"
-                            className="btn btn-secondary "
-                            value="Update Toys"
+                            className="btn btn-primary "
+                            value="Update Toy"
                         ></input>
                     </div>
                 </form>

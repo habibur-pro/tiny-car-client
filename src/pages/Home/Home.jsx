@@ -2,7 +2,7 @@ import Banner from "../../components/Baner";
 import Galary from "../../components/Galary";
 import Reviews from "../../components/Reviews";
 import ShopByCategory from "../../components/ShopByCategory";
-import TopRated from "../../components/TopRated";
+import Treanding from "../../components/Treanding";
 import useTitle from "../../hooks/useTitle";
 
 
@@ -14,7 +14,7 @@ const Home = () => {
         <>
             <Banner></Banner>
             <Galary></Galary>
-            <TopRated></TopRated>
+            <Treanding></Treanding>
             <ShopByCategory></ShopByCategory>
             <Reviews></Reviews>
 

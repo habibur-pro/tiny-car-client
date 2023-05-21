@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
-import gradient from '../assets/gradint-image.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
 
-const TopRated = () => {
+const Treanding = () => {
     const [toys, setToys] = useState([])
 
     useEffect(() => {
-        fetch('https://tiny-car-server.vercel.app/allToys/sports')
+        fetch('https://tiny-car-server.vercel.app/allToys/treanding')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
@@ -50,4 +49,4 @@ const TopRated = () => {
     );
 };
 
-export default TopRated;
+export default Treanding;

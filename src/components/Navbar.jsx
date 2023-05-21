@@ -78,7 +78,7 @@ const Navbar = () => {
                     }
                     {
                         user ?
-                            <button className='btn btn-secondary' onClick={handleLogOut}>Logout</button>
+                            <button className='btn btn-primary' onClick={handleLogOut}>Logout</button>
                             :
                             <Link to='/login'> <button className='btn btn-primary' onClick={handleLogOut}>Login</button></Link>
                     }
@@ -138,7 +138,7 @@ const Navbar = () => {
                         }
                         {
                             user ?
-                                <button className='btn btn-secondary' onClick={handleLogOut}>Logout</button>
+                                <button className='btn btn-primary' onClick={handleLogOut}>Logout</button>
                                 :
                                 <Link to='/login'> <button className='btn btn-primary' onClick={handleLogOut}>Login</button></Link>
                         }
