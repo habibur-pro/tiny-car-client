@@ -9,13 +9,24 @@ export default {
     extend: {
       backgroundImage: {
 
-
+        // #f9d92e
       }
     },
+
+
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light"],
+    themes: [
+      {
+        "light": {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          primary: 'blue',
+          secondary: "#f9d92e",
+        }
+      }
+
+    ],
   },
 }
 

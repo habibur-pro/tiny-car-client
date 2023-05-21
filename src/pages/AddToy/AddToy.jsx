@@ -23,7 +23,7 @@ const AddToy = () => {
                 if (data.insertedId) {
                     Swal.fire(
                         'Added',
-                        'Your Toys has been Added.',
+                        'Your Toy has been Added.',
                         'success'
                     )
                     reset()

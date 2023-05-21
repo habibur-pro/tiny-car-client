@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="max-w-[1240px] mx-auto py-2 flex items-center justify-between px-5 ">
                 <div className='flex items-center'>
                     {/* logo  */}
-                    <img className='w-16' src={logo} alt="" />
+                    <Link to='/'><img className='w-16' src={logo} alt="" /></Link>
                     <h3 className='text-xl font-bold'>Tiny<span className='text-red-500'>Car</span></h3>
                 </div>
                 {/* nav links  */}
