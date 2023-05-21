@@ -17,9 +17,20 @@ const MYToys = () => {
 
     }, [])
 
+    const handleFilter = (event) => {
+
+        const filterValue = event.target.value;
+        console.log(filterValue)
+    }
+
     return (
         <div className="bg-my-gradient bg-cover bg-no-repeat bg-center">
             <div className="max-w-[1240px] mx-auto px-5 py-16 ">
+                <select onChange={handleFilter} className="select select-bordered w-full max-w-xs mb-5">
+                    <option disabled selected>Filter by Price</option>
+                    <option value='ascending'>Price Acceding</option>
+                    <option value='descending'>Price Descending</option>
+                </select>
                 <table className="table w-full border-x border-b">
                     {/* head */}
                     <thead>
