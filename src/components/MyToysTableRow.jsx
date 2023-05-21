@@ -1,7 +1,6 @@
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from 'sweetalert2'
-import UpdateModal from "./UpdateModal";
 import { Link } from "react-router-dom";
 
 

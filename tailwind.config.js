@@ -23,7 +23,7 @@ export default {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
           primary: '#f9d92e',
 
-          secondary: "#809bfe",
+          secondary: "#f9d92e",
         }
       }
 

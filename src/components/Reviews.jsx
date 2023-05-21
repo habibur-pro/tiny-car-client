@@ -24,9 +24,9 @@ const Reviews = () => {
 
 
     return (
-        <div className=''>
+        <div className='my-12'>
 
-            <h1 className='text-3xl text-gray-200 text-center font-extrabold'>What our customers say</h1>
+            <h1 className=' mb-5 text-3xl text-center font-extrabold'>What our customers say</h1>
 
 
             <Swiper
@@ -65,9 +65,9 @@ const Reviews = () => {
                         key={review.id}
 
                     >
-                        <div className='card bg-base-200 p-5'>
-                            <img className='w-24 h-24 rounded-full border mx-auto' src={logo} alt="" />
-                            <Rating className="mt-3"
+                        <div className='card bg-base-200 p-5 text-center my-5'>
+                            <img className='w-24 h-24 rounded-full border mx-auto' src={review?.image} alt="" />
+                            <Rating className="mt-3 text-center mt-3"
                                 placeholderRating={review.rating}
                                 emptySymbol={<FaStar className="icon text-slate-300" />}
                                 placeholderSymbol={<FaStar className="icon text-secondary" />}
