@@ -35,8 +35,8 @@ const Blog = () => {
             </div>
 
             <div className="mt-10">
-                <h1 className="text-xl font-bold">what is mongodb aggreegation?</h1>
-                <p className="mt-3">  Mongodb aggregation is a powerful framework of mongob. it is allows to complex data analysis  and transformation. aggregation pipeline is a series of data prosecing and transforming. such as matching, projecting, grouping, sorting etc.</p>
+                <h1 className="text-xl font-bold">what is mongodb aggregation?</h1>
+                <p className="mt-3">  Mongodb aggregation is a powerful framework of mongob. it is allows to complex data analysis  and transformation. aggregation pipeline is a series of data processing and transforming. such as matching, projecting, grouping, sorting etc.</p>
             </div>
         </div>
     );

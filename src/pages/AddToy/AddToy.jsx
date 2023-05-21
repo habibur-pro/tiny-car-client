@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Swal from "sweetalert2";
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
@@ -20,16 +19,8 @@ const AddToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
-                    Swal.fire(
-                        'Added',
-                        'Your Toy has been Added.',
-                        'success'
-                    )
-                    reset()
-                }
-
-
+                console.log(data)
+                reset()
             })
             .catch(err => console.log(err))
     };
@@ -74,12 +65,7 @@ const AddToy = () => {
                             <option value="police">Police Car</option>
                             <option value="fire truck">Fire Truck</option>
                         </select>
-                        {/* <input
-                            type="text"
-                            placeholder="Sub Category"
-                            className=" px-3 py-2 focus:outline-primary w-full border rounded-sm"
-                            {...register("sub_category", { required: true })}
-                        /> */}
+
 
                         {/* price  */}
                         <input
